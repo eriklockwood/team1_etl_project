@@ -14,7 +14,6 @@ DROP TABLE IF EXISTS
 	director,
 	movie_drt,
 	rating,
-	movie_location
 	CASCADE;
 
 CREATE TABLE "movie" (
@@ -25,6 +24,10 @@ CREATE TABLE "movie" (
     "duration" INT   NOT NULL,
     "budget" NUMERIC(15,2)   NOT NULL,
     "gross_income" NUMERIC(15,2)   NOT NULL,
+    "netflix" BOOL   NOT NULL,
+    "hulu" BOOL   NOT NULL,
+    "prime" BOOL   NOT NULL,
+    "disney" BOOL   NOT NULL,
     CONSTRAINT "pk_movie" PRIMARY KEY (
         "movie_id"
      )
@@ -113,18 +116,6 @@ CREATE TABLE "rating" (
      )
 );
 
-CREATE TABLE "movie_location" (
-    "ID" INT   NOT NULL,
-    "movie_id" INT   NOT NULL,
-    "netflix" BOOL   NOT NULL,
-    "hulu" BOOL   NOT NULL,
-    "prime" BOOL   NOT NULL,
-    "disney" BOOL   NOT NULL,
-    CONSTRAINT "pk_movie_location" PRIMARY KEY (
-        "ID"
-     )
-);
-
 ALTER TABLE "movie_actor" ADD CONSTRAINT "fk_movie_actor_movie_id" FOREIGN KEY("movie_id")
 REFERENCES "movie" ("movie_id");
 
@@ -157,7 +148,3 @@ REFERENCES "director" ("director_id");
 
 ALTER TABLE "rating" ADD CONSTRAINT "fk_rating_movie_id" FOREIGN KEY("movie_id")
 REFERENCES "movie" ("movie_id");
-
-ALTER TABLE "movie_location" ADD CONSTRAINT "fk_movie_location_movie_id" FOREIGN KEY("movie_id")
-REFERENCES "movie" ("movie_id");
-
