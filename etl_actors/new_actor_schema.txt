@@ -3,8 +3,8 @@ CREATE TABLE "actor" (
     "name" VARCHAR(255)   NOT NULL,
     "birth_name" VARCHAR(255)   NULL,
     "height" INT   NULL,
-    "birth_date" VARCHAR  NULL,
-    "death_date" VARCHAR  NULL,
+    "birth_date" DATE NULL,
+    "death_date" DATE  NULL,
     CONSTRAINT "pk_actor" PRIMARY KEY (
         "actor_id"
      )
