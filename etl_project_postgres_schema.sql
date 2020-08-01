@@ -27,6 +27,7 @@ CREATE TABLE "movie" (
     "hulu" BOOL   NOT NULL,
     "prime" BOOL   NOT NULL,
     "disney" BOOL   NOT NULL,
+    "imdb_title_id" VARCHAR  NULL,
     CONSTRAINT "pk_movie" PRIMARY KEY (
         "movie_id"
      )
