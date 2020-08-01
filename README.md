@@ -12,7 +12,7 @@ Please run the notebooks in following sequence
 2) Run "etl_actor.ipynb" to load actor and movie_actor table
 3) Run "etl_director.ipynb" to load director and movie_drt table
 4) Run "etl_genre.ipynb" to load genre and movie_genre table
-5) Run "country_language_rating.ipynb" to load country, language, rating and other subsequent tables
+5) Run "etl_country_language_rating.ipynb" to load country, language, rating and other subsequent tables
 
 
 Following are more documents to refer  -
