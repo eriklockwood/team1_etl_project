@@ -34,10 +34,11 @@ CREATE TABLE "actor" (
     "actor_id" INT   NOT NULL,
     "name" VARCHAR(255)   NOT NULL,
     "gender" VARCHAR(10)   NOT NULL,
-    "height" INT   NOT NULL,
-    "birth_date" DATE   NOT NULL,
-    "birth_death" DATE   NOT NULL,
-    "actor_facebook_likes" INT   NOT NULL,
+    "birth_name" VARCHAR(255)   NULL,
+    "height" INT   NULL,
+    "birth_date" DATE   NULL,
+    "death_date" DATE   NULL,
+    "actor_facebook_likes" INT   NULL,
     CONSTRAINT "pk_actor" PRIMARY KEY (
         "actor_id"
      )
