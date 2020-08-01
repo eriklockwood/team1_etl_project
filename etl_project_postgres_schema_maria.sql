@@ -18,20 +18,17 @@ DROP TABLE IF EXISTS
 
 CREATE TABLE "movie" (
     "movie_id" INT   NOT NULL,
-    "rating_sys_id" INT   NOT NULL,
     "title" VARCHAR(255)   NOT NULL,
-    "release_year" INT   NOT NULL,
-    "duration" INT   NOT NULL,
-    "budget" NUMERIC(15,2)   NOT NULL,
-    "gross_income" NUMERIC(15,2)   NOT NULL,
-    "netflix" BOOL   NOT NULL,
-    "hulu" BOOL   NOT NULL,
-    "prime" BOOL   NOT NULL,
-    "disney" BOOL   NOT NULL,
+    "year" INT   NULL,
+    "duration" INT  NULL,
+    "budget" VARCHAR  NULL,
+    "worlwide_gross_income" NUMERIC(15,2)  NULL,
+	"imdb_title_id" VARCHAR(30) NOT NULL,
     CONSTRAINT "pk_movie" PRIMARY KEY (
         "movie_id"
      )
 );
+
 
 CREATE TABLE "actor" (
     "actor_id" INT   NOT NULL,
@@ -106,11 +103,8 @@ CREATE TABLE "movie_drt" (
 
 CREATE TABLE "rating" (
     "movie_id" INT   NOT NULL,
-    "imbd" NUMERIC(6,2)   NOT NULL,
-    "rotten_tomatos" NUMERIC(6,2)   NOT NULL,
-    "critic_reviews" INT   NOT NULL,
-    "movie_facebook_likes" INT   NOT NULL,
-    "imdb_review_count" INT   NOT NULL,
+    "imdb" NUMERIC(6,2),
+    "rotten_tomatoes" NUMERIC(6,2),
     CONSTRAINT "pk_rating" PRIMARY KEY (
         "movie_id"
      )
