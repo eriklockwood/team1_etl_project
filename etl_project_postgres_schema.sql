@@ -21,10 +21,10 @@ CREATE TABLE "movie" (
     "rating_sys_id" INT   NOT NULL,
     "title" VARCHAR(255)   NOT NULL,
     "release_year" INT   NOT NULL,
-    "duration" INT   NOT NULL,
-    "budget" NUMERIC(15,2)   NOT NULL,
-    "gross_income" NUMERIC(15,2)   NOT NULL,
-    "netflix" BOOL   NOT NULL,
+    "duration" INT   NULL,
+    "budget" NUMERIC(15,2)   NULL,
+    "gross_income" NUMERIC(15,2)   NULL,
+    "netflix" BOOL NOT  NULL,
     "hulu" BOOL   NOT NULL,
     "prime" BOOL   NOT NULL,
     "disney" BOOL   NOT NULL,
@@ -33,14 +33,16 @@ CREATE TABLE "movie" (
      )
 );
 
+
 CREATE TABLE "actor" (
     "actor_id" INT   NOT NULL,
     "name" VARCHAR(255)   NOT NULL,
     "gender" VARCHAR(10)   NOT NULL,
-    "height" INT   NOT NULL,
-    "birth_date" DATE   NOT NULL,
-    "birth_death" DATE   NOT NULL,
-    "actor_facebook_likes" INT   NOT NULL,
+    "birth_name" VARCHAR(255)   NULL,
+    "height" INT   NULL,
+    "birth_date" DATE   NULL,
+    "death_date" DATE   NULL,
+    "actor_facebook_likes" INT   NULL,
     CONSTRAINT "pk_actor" PRIMARY KEY (
         "actor_id"
      )
@@ -93,7 +95,7 @@ CREATE TABLE "movie_country" (
 CREATE TABLE "director" (
     "director_id" INT   NOT NULL,
     "name" VARCHAR(255)   NOT NULL,
-    "director_facebook_likes" INT   NOT NULL,
+    "director_facebook_likes" INT   NULL,
     CONSTRAINT "pk_director" PRIMARY KEY (
         "director_id"
      )
@@ -106,11 +108,8 @@ CREATE TABLE "movie_drt" (
 
 CREATE TABLE "rating" (
     "movie_id" INT   NOT NULL,
-    "imbd" NUMERIC(6,2)   NOT NULL,
-    "rotten_tomatos" NUMERIC(6,2)   NOT NULL,
-    "critic_reviews" INT   NOT NULL,
-    "movie_facebook_likes" INT   NOT NULL,
-    "imdb_review_count" INT   NOT NULL,
+    "imdb" NUMERIC(6,2),
+    "rotten_tomatoes" NUMERIC(6,2),
     CONSTRAINT "pk_rating" PRIMARY KEY (
         "movie_id"
      )
