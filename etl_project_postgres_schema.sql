@@ -106,6 +106,7 @@ CREATE TABLE "movie_drt" (
 );
 
 CREATE TABLE "rating" (
+    "rating_id" INT   NOT NULL,
     "movie_id" INT   NOT NULL,
     "imdb" NUMERIC(6,2),
     "rotten_tomatoes" NUMERIC(6,2),
