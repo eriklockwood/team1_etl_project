@@ -18,12 +18,11 @@ DROP TABLE IF EXISTS
 
 CREATE TABLE "movie" (
     "movie_id" INT   NOT NULL,
-    "rating_sys_id" INT   NOT NULL,
     "title" VARCHAR(255)   NOT NULL,
-    "release_year" INT   NOT NULL,
+    "year" INT   NOT NULL,
     "duration" INT   NULL,
     "budget" NUMERIC(15,2)   NULL,
-    "gross_income" NUMERIC(15,2)   NULL,
+    "worlwide_gross_income" NUMERIC(15,2)   NULL,
     "netflix" BOOL NOT  NULL,
     "hulu" BOOL   NOT NULL,
     "prime" BOOL   NOT NULL,
